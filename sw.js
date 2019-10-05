@@ -1,25 +1,26 @@
 self.importScripts('data/games.js');
 
 // Files to cache
-var cacheName = 'js13kPWA-v2';
+var cacheName = 'js13kPWA-v1';
 var appShellFiles = [
-  '',
-  'index.html',
-  'app.js',
-  'style.css',
-  'fonts/graduate.eot',
-  'fonts/graduate.ttf',
-  'fonts/graduate.woff',
-  'favicon.ico',
-  'img/aslogo.png',
-  'icons/icon-32.png',
-  'icons/icon-64.png',
-  'icons/icon-96.png',
-  'icons/icon-128.png',
-  'icons/icon-168.png',
-  'icons/icon-192.png',
-  'icons/icon-256.png',
-  'icons/icon-512.png'
+  '/',
+  '/index.html',
+  '/app.js',
+  '/style.css',
+  '/fonts/graduate.eot',
+  '/fonts/graduate.ttf',
+  '/fonts/graduate.woff',
+  '/favicon.ico',
+  '/img/aslogo.png',
+  '/img/bg.png',
+  '/icons/icon-32.png',
+  '/icons/icon-64.png',
+  '/icons/icon-96.png',
+  '/icons/icon-128.png',
+  '/icons/icon-168.png',
+  '/icons/icon-192.png',
+  '/icons/icon-256.png',
+  '/icons/icon-512.png'
 ];
 var gamesImages = [];
 for(var i=0; i<games.length; i++) {
