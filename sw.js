@@ -1,4 +1,5 @@
 self.importScripts('data/games.js');
+self.importScripts('pouchdb-7.1.1.min.js');
 
 // Files to cache
 var cacheName = 'js13kPWA-v1';
@@ -6,6 +7,7 @@ var appShellFiles = [
   '/',
   '/index.html',
   '/app.js',
+  // '/pouchdb-7.1.1.min.js',
   '/style.css',
   '/fonts/graduate.eot',
   '/fonts/graduate.ttf',

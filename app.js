@@ -14,7 +14,7 @@ var content = '';
 for(var i=0; i<games.length; i++) {
 	var entry = template.replace(/POS/g,(i+1))
 		.replace(/SLUG/g,games[i].slug)
-		.replace(/NAME/g,games[i].name)
+		 .replace(/NAME/g,games[i].name)
 		.replace(/AUTHOR/g,games[i].author)
 		.replace(/TWITTER/g,games[i].twitter)
 		.replace(/WEBSITE/g,games[i].website)
