@@ -5,22 +5,40 @@
 </form>
 
 <script>
+  (() => {
+    window.onerror = (msg, url, line, col, error) => {
+      window.navigator.sendBeacon(
+        "https://2886795326-5984-elsy04.environments.katacoda.com/beacons/_design/app/_update/beacon",
+        JSON.stringify({ error: { msg, url, line, col, error } })
+      );
+    };
+    window.onunload = () => {
+      window.navigator.sendBeacon(
+        "https://2886795326-5984-elsy04.environments.katacoda.com/beacons/_design/app/_update/beacon",
+        JSON.stringify({ entries: window.performance.getEntries() })
+      );
+    };
+  })();
+
   let credentials = document.getElementById("credentials");
   let login = document.getElementById("login");
   login.addEventListener("click", async e => {
     let data;
     try {
-      data = await fetch("https://2886795326-5984-elsy04.environments.katacoda.com/_session", {
-        method: "POST",
-        credentials: "include", //this is for set-cookie AuthSession
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: credentials.name.value,
-          password: credentials.password.value
-        })
-      }).then(res => {
+      data = await fetch(
+        "https://2886795326-5984-elsy04.environments.katacoda.com/_session",
+        {
+          method: "POST",
+          credentials: "include", //this is for set-cookie AuthSession
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: credentials.name.value,
+            password: credentials.password.value
+          })
+        }
+      ).then(res => {
         return res.json();
       });
     } catch (error) {
@@ -33,14 +51,17 @@
   signin.addEventListener("click", async e => {
     let data;
     try {
-      data = await fetch("https://2886795326-5984-elsy04.environments.katacoda.com/signin", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          name: credentials.name.value,
-          password: credentials.password.value
-        })
-      })
+      data = await fetch(
+        "https://2886795326-5984-elsy04.environments.katacoda.com/signin",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            name: credentials.name.value,
+            password: credentials.password.value
+          })
+        }
+      )
         .then(res => res.json())
         .then(val => {
           console.log(val);
