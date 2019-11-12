@@ -1,5 +1,5 @@
 (async () => {
-  let currentUser = await fetch("http://localhost:5984/_session", {
+  let currentUser = await fetch("http://ec2-13-58-164-101.us-east-2.compute.amazonaws.com:5984/_session", {
     credentials: "include"
   }).then(res => res.json());
   if (!currentUser.userCtx.name) {
@@ -124,8 +124,8 @@
 
   //Sync
   const sync = e => {
-    // db.replicate.from("http://localhost:5984/test", { filter: "app/user" });
-    let syncEvents = PouchDB.sync("test", "http://localhost:5984/test", {
+    // db.replicate.from("http://ec2-13-58-164-101.us-east-2.compute.amazonaws.com:5984/test", { filter: "app/user" });
+    let syncEvents = PouchDB.sync("test", "http://ec2-13-58-164-101.us-east-2.compute.amazonaws.com:5984/test", {
       pull: { filter: "app/user" },
       live: true,
       retry: true
