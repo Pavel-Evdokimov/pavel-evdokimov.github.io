@@ -3,7 +3,7 @@
     credentials: "include"
   }).then(res => res.json());
   if (!currentUser.userCtx.name) {
-    window.location.assign("/login");
+    window.location.assign("/login.html");
   }
 
   // Registering Service Worker
