@@ -1,4 +1,4 @@
-var sync = PouchDB.sync("test", "http://ec2-13-58-164-101.us-east-2.compute.amazonaws.com:5984/ouchdb", {
+var sync = PouchDB.sync("test", "https://2886795326-5984-elsy04.environments.katacoda.com/ouchdb", {
   live: true,
   retry: true
 })
