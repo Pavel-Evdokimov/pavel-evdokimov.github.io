@@ -6,23 +6,61 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="pwa.webmanifest" />
-	<script src="data/games.js" defer></script>
-	<script src="pouchdb-7.1.1.min.js"></script>
-    <script src="app.js" defer></script>
+    <script src="beacon.js"></script>
+    <script src="pouchdb-7.1.1.min.js"></script>
+    <script src="main.js"></script>
+    <!-- <script src="sw.js"></script> -->
   </head>
   <body>
     <header>
       <p>
         <a class="logo" href=""><img src="img/aslogo.png" alt="alfastrah"/></a>
       </p>
+      <p id="online">online</p>
     </header>
     <main>
-      <h1>Header</h1>
+      <h1 id="userName"></h1>
       <p class="description">
         Description
       </p>
-      <button id="notifications">Request dummy notifications</button>
+      <!-- <button id="notifications">Request dummy notifications</button> -->
+      <article>
+        <form id="addForm" action="">
+          <label for="title">Title</label>
+          <input type="text" name="title" />
+          <label for="text">Text</label>
+          <textarea
+            name="text"
+            id="text"
+            cols="10"
+            rows="2"
+            placeholder="введите текст"
+          ></textarea>
+          <label for="photo">Photo</label>
+          <input type="file" name="photo" id="photo" />
+          <label for="shareWith">email</label>
+          <input type="text" name="shareWith" />
+          <label for="shareWithGroup">#group</label>
+          <input type="text" name="shareWithGroup" />
+          <input id="addButton" type="button" value="Добавить" />
+        </form>
+      </article>
       <section id="content"></section>
+      <span id="rowCount">
+        <span>Строк на странице: </span>
+        <span name="value">0</span>
+      </span>
+      <span id="pageCount">
+        <span>Страниц всего: </span>
+        <span name="value">0</span>
+      </span>
+      <span id="pageNumber">
+        <span>Страница номер: </span>
+        <span name="value">0</span>
+      </span>
+
+      <input type="button" value="prev" id="prev" />
+      <input type="button" value="next" id="next" />
     </main>
     <footer>
       <p>
